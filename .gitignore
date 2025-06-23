@@ -1,0 +1,26 @@
+# Bytecode
+__pycache__/
+*.pyc
+
+# Editor dan OS files
+.vscode/
+*.swp
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+
+# Output build
+build/
+dist/
+*.so
+*.o
+*.out
+*.exe
+
+# Logs
+*.log
+
+# dotenv file
+.env
