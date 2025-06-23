@@ -1,15 +1,8 @@
-from mutagen import File
 import subprocess
 import shutil
 import json
 
 def get_audio_duration(path: str) -> float:
-  audio = File(path)
-  if audio is None or not audio.info:
-    raise ValueError("File audio tidak dikenali")
-  return audio.info.length
-
-def get_audio_duration_ffprobe(path: str) -> float:
   # Check if ffprobe is available
   if not shutil.which("ffprobe"):
     raise RuntimeError("ffprobe is not installed or not found in PATH.")
@@ -37,5 +30,4 @@ def get_audio_duration_ffprobe(path: str) -> float:
   return duration
   
 if __name__ == "__main__":
-  print(get_audio_duration("tes.mp3"))
-  print(get_audio_duration_ffprobe("tes.mp3"))
+  print(get_audio_duration("../test.mp3"))
